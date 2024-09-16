@@ -1,0 +1,528 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Student_Home</title>
+        <style>
+            body {
+        font-family: 'Courier New', Courier, monospace;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #ffffff;
+    }
+
+    .container {
+        display: flex;
+        height: 100vh;
+        padding: 20px;
+    }
+
+    /* Left section */
+    .left-section {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .logo-section {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-right: 20px;
+        flex-grow: 1;
+    }
+
+    .logo-section img {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+
+    .logo-section h1 {
+        margin: 0;
+        color: #4A8FE7;
+        font-size: 2rem;
+        line-height: 1.2;
+        display: inline;
+    }
+
+    .logo-section .subscript {
+        font-size: 0.8rem;
+        color: #5C7AFF;
+        display: block;
+        margin-top: 5px;
+    }
+
+    .search-bar {
+        flex-grow: 1;
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .search-bar select,
+    .search-bar input[type="text"] {
+        padding: 10px;
+        border: 1px solid #44E5E7;
+        border-radius: 25px;
+        outline: none;
+        font-size: 1rem;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        color: #000000;
+        margin-right: 10px;
+        flex: 1;
+    }
+
+    .search-bar input[type="text"] {
+        border-color: #59D2FE;
+    }
+
+    .search-bar select {
+        border-radius: 25px;
+        background-color: #e9e9e9;
+        color: #000000;
+        cursor: pointer;
+    }
+
+    .search-bar input[type="text"]:focus {
+        border-color: #4A8FE7;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .search-bar::before {
+        content: '\1F50D'; /* Unicode search icon */
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #4A8FE7;
+        font-size: 1.5rem;
+    }
+
+    .profile-and-careers {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: flex-end; /* Align items at the bottom */
+    }
+
+    .profile-section {
+    width: 250px;
+    height: 240px;
+    background: linear-gradient(135deg, #ffffff, #f0f4f7); /* Soft gradient for a subtle effect */
+    border-radius: 15px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #4A8FE7; /* Updated border color */
+    color: #333333; /* Darker text color for better readability */
+    text-align: center;
+}
+
+.profile-section img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 4px solid #59D2FE; /* Updated border color */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Added shadow for a lifted effect */
+}
+
+.profile-section h2 {
+    margin: 10px 0;
+    color: #4A8FE7;
+    font-size: 1.3rem; /* Slightly larger font size for emphasis */
+}
+
+.profile-section p {
+    margin: 5px 0;
+    color: #666666; /* Slightly lighter text color for secondary information */
+    font-size: 0.9rem;
+}
+
+
+    .career-boxes {
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping for responsiveness */
+        gap: 10px; /* Increase gap between boxes for better spacing */
+        justify-content: space-between; /* Distribute space between boxes */
+        margin-top: 20px; /* Adjust this value to align with the bottom of the profile section */
+    }
+
+    .career-box {
+    width: calc(33.333% - 10px);
+    height: 220px;
+    background: linear-gradient(135deg, #6DD5FA, #2980B9);
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border: 2px solid #4A8FE7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    color: #000000;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
+}
+
+.career-box:hover {
+    transform: scale(1.05); /* Slightly scale up the box on hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Increase the shadow effect */
+}
+
+
+    .career-box h2 {
+        margin: 15px 0; /* Increase margin for better spacing */
+        font-size: 1.4rem; /* Increase font size for better readability */
+        color: #ffffff9d; /* Updated color for better contrast */
+        text-align: center; /* Center align heading */
+    }
+
+    .career-box p {
+        margin: 4px 0; /* Adjust margin for proper spacing */
+        font-size: 0.9rem;
+        color: #ffffff; /* Updated color for better contrast */
+        text-align: left; /* left align paragraph text */
+    }
+
+    .graph {
+        margin-top: 20px;
+        width: 100%;
+        height: 400px;
+        background-color: #e5f5f6;
+        border-radius: 12px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Right section */
+    .right-section {
+        width: 30%;
+        padding: 20px;
+        background-color: #ffffff;
+        border-left: 1px solid #e0e0e0;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+   /* Chat List */
+.chat-list {
+    background-color: #f9f9f9; /* Slightly lighter background for better contrast */
+    padding: 15px;
+    border-radius: 10px;
+    max-height: 320px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0; /* Lighter border for a clean look */
+    margin-bottom: 20px;
+}
+
+.chat-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions for hover effects */
+}
+
+.chat-item:hover {
+    background-color: #f1f1f1; /* Slightly darker background on hover */
+    transform: scale(1.02); /* Subtle scale effect on hover */
+}
+
+.chat-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    border: 2px solid #73FBD3; /* Matching border color */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a lifted effect */
+}
+
+.chat-item .chat-details {
+    flex: 1;
+}
+
+.chat-item .chat-details h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: #333333; /* Darker color for better readability */
+}
+
+.chat-item .chat-details p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666666; /* Slightly lighter text color for secondary information */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.chat-item:last-child {
+    border-bottom: none; /* Remove border from last item */
+}
+
+    .career-box .salary,
+    .career-box .skills,
+    .career-box .companies {
+        font-weight: bold;
+    }
+
+    .workshops {
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .workshops h3 {
+            margin-bottom: 10px;
+            color: #4A8FE7;
+        }
+
+        .workshops-list {
+            max-height: 320px;
+            overflow-y: auto;
+        }
+
+        .workshops ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .workshops ul li {
+            background-color: #e9e9e9;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #73FBD3;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .workshops ul li h4 {
+            margin: 0 0 5px 0;
+            color: #000000;
+        }
+
+        .workshops ul li p {
+            margin: 2px 0;
+            color: #666666;
+        }
+
+        .workshops ul li .date {
+            font-weight: bold;
+            color: #4A8FE7;
+        }
+
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <!-- Left section -->
+            <div class="left-section">
+                <div class="top-row">
+                    <div class="logo-section">
+                        <img src="/Images/Blue Arrow Icon Internet Logo.png" alt="Logo">
+                        <div class="text-container">
+                            <h1>FUTURE VISION</h1>
+                            <div class="subscript">Shaping your future.....</div>
+                        </div>
+                    </div>
+                    <div class="search-bar">
+                        <select id="search-type">
+                            <option value="chats">Chats</option>
+                            <option value="workshops">Upcoming Workshops</option>
+                        </select>
+                        <input type="text" id="search" placeholder="Search here...">
+                    </div>
+                </div>
+
+                <!-- Profile and Career Boxes -->
+                
+                
+                <div class="profile-and-careers">
+                    <div class="profile-section">
+                        <img src="https://via.placeholder.com/120" alt="Profile Image">
+                        <h2>John Doe</h2>
+                        <p>Grade 12 Student</p>
+                    </div>
+                    
+                    <div class="career-boxes">
+                        <div class="career-box">
+                            <h2>Engineering</h2>
+                            <p class="salary">Salary: $80,000 - $120,000</p>
+                            <p class="skills">Skills Required: Problem Solving, Coding, Design</p>
+                            <p class="companies">Companies Hiring: Google, Microsoft, Intel</p>
+                        </div>
+                        <div class="career-box">
+                            <h2>Medical</h2>
+                            <p class="salary">Salary: $70,000 - $110,000</p>
+                            <p class="skills">Skills Required: Patient Care, Diagnosis, Research</p>
+                            <p class="companies">Companies Hiring: Johns Hopkins, Mayo Clinic, Cleveland Clinic</p>
+                        </div>
+                        <div class="career-box">
+                            <h2>Chartered Accountant</h2>
+                            <p class="salary">Salary: $60,000 - $100,000</p>
+                            <p class="skills">Skills Required: Financial Analysis, Tax Planning, Audit</p>
+                            <p class="companies">Companies Hiring: Deloitte, PwC, EY</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graph section -->
+                <div class="graph">
+                    <!-- Placeholder for graph -->
+                </div>
+            </div>
+
+            <!-- Right section -->
+            <div class="right-section">
+                <!-- Chat List -->
+                <h3>Chat with Mentors</h3>
+                <div class="chat-list" id="chat-list">
+                    <div class="chat-item">
+                        <img src="https://via.placeholder.com/50" alt="Chat Image">
+                        <div class="chat-details">
+                            <h4>Chat User 1</h4>
+                            <p>Recent message preview...</p>
+                        </div>
+                    </div>
+                    <div class="chat-item">
+                        <img src="https://via.placeholder.com/50" alt="Chat Image">
+                        <div class="chat-details">
+                            <h4>Chat User 2</h4>
+                            <p>Recent message preview...</p>
+                        </div>
+                    </div>
+                    <div class="chat-item">
+                        <img src="https://via.placeholder.com/50" alt="Chat Image">
+                        <div class="chat-details">
+                            <h4>Chat User 3</h4>
+                            <p>New message here...</p>
+                        </div>
+                    </div>
+                    <div class="chat-item">
+                        <img src="https://via.placeholder.com/50" alt="Chat Image">
+                        <div class="chat-details">
+                            <h4>Chat User 4</h4>
+                            <p>Hello! How are you?</p>
+                        </div>
+                    </div>
+                    <div class="chat-item">
+                        <img src="https://via.placeholder.com/50" alt="Chat Image">
+                        <div class="chat-details">
+                            <h4>Chat User 5</h4>
+                            <p>Meeting tomorrow...</p>
+                        </div>
+                    </div>
+                    <div class="chat-item">
+                        <img src="https://via.placeholder.com/50" alt="Chat Image">
+                        <div class="chat-details">
+                            <h4>Chat User 6</h4>
+                            <p>Hello there;)</p>
+                        </div>
+                    </div>
+                    <div class="chat-item">
+                        <img src="https://via.placeholder.com/50" alt="Chat Image">
+                        <div class="chat-details">
+                            <h4>Chat User 7</h4>
+                            <p>All the best!</p>
+                        </div>
+                    </div>
+                    <!-- Add more chats here -->
+                </div>
+
+                <!-- Workshops -->
+                <div class="workshops">
+                    <h3>Upcoming Workshops</h3>
+                    <div class="workshops-list">
+                        <ul>
+                            <li>
+                                <h4>Workshop Title 1</h4>
+                                <p>Description of Workshop 1.</p>
+                                <p class="date">Date: 2024-09-30</p>
+                            </li>
+                            <li>
+                                <h4>Workshop Title 2</h4>
+                                <p>Description of Workshop 2.</p>
+                                <p class="date">Date: 2024-10-05</p>
+                            </li>
+                            <li>
+                                <h4>Workshop Title 3</h4>
+                                <p>Description of Workshop 3.</p>
+                                <p class="date">Date: 2024-10-10</p>
+                            </li>
+                            <li>
+                                <h4>Workshop Title 4</h4>
+                                <p>Description of Workshop 4.</p>
+                                <p class="date">Date: 2024-10-15</p>
+                            </li>
+                            <li>
+                                <h4>Workshop Title 5</h4>
+                                <p>Description of Workshop 5.</p>
+                                <p class="date">Date: 2024-10-20</p>
+                            </li>
+                            <li>
+                                <h4>Workshop Title 6</h4>
+                                <p>Description of Workshop 6.</p>
+                                <p class="date">Date: 2024-10-25</p>
+                            </li>
+                            <li>
+                                <h4>Workshop Title 7</h4>
+                                <p>Description of Workshop 7.</p>
+                                <p class="date">Date: 2024-11-01</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById('search').addEventListener('input', function () {
+                let searchType = document.getElementById('search-type').value;
+                let searchTerm = this.value.toLowerCase();
+
+                if (searchType === 'chats') {
+                    let chatItems = document.querySelectorAll('.chat-item');
+                    chatItems.forEach(function (item) {
+                        let name = item.querySelector('h4').textContent.toLowerCase();
+                        let message = item.querySelector('p').textContent.toLowerCase();
+                        if (name.includes(searchTerm) || message.includes(searchTerm)) {
+                            item.style.display = 'flex';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                } else if (searchType === 'workshops') {
+                    let workshops = document.querySelectorAll('.workshops ul li');
+                    workshops.forEach(function (item) {
+                        let title = item.querySelector('h4').textContent.toLowerCase();
+                        let date = item.querySelector('.date').textContent.toLowerCase();
+                        let address = item.querySelector('.address').textContent.toLowerCase();
+                        if (title.includes(searchTerm) || date.includes(searchTerm) || address.includes(searchTerm)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        </script>
+    </body>
+    </html>

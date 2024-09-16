@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Quiz</title>
+    <style>
+           body {
+            font-family: Arial, sans-serif;
+            background-color: #6eaae6; /* Darker blue background */
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #499fce; /* Lighter blue header */
+            padding: 20px;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #CAF0F8;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        .question {
+            background-color: #B0F0FF; /* Lighter blue question background */
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+            color: #03045E;
+            animation: fadeUp 1.5s ease-in-out;
+        }
+
+        .question h3 {
+            margin-bottom: 10px;
+        }
+
+        .question button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 15px;
+            background-color: #F9F0FF; /* Lighter blue button background */
+            border: none;
+            border-radius: 5px;
+            color: #03045E;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .question button:hover {
+            background-color: #EAF0FF; /* Lighter blue button hover */
+        }
+
+        .question button.selected {
+            background-color: #00B4D8; /* Blue selected button */
+            color: #fff;
+        }
+
+        button.submit {
+            background-color: #20D4F8; /* Lighter blue submit button */
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            display: block;
+            width: 100%;
+            max-width: 200px;
+            margin: 20px auto;
+        }
+
+        button.submit:hover {
+            background-color: #0077B6; /* Darker blue submit button hover */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Career Counseling Test</h1>
+</header>
+
+<div class="container">
+    <form id="careerQuiz">
+        <div class="question">
+            <h3>1. When working on a project, how do you prefer to approach it?</h3>
+            <button type="button" onclick="selectOption(1, 'A')">A) Follow a detailed plan and stick to it</button>
+            <button type="button" onclick="selectOption(1, 'B')">B) Go with the flow and adjust as needed</button>
+            <button type="button" onclick="selectOption(1, 'C')">C) Focus on exploring creative and innovative solutions</button>
+            <button type="button" onclick="selectOption(1, 'D')">D) Take charge and ensure everyone is on track</button>
+        </div>
+
+        <div class="question">
+            <h3>2. How do you feel about making decisions?</h3>
+            <button type="button" onclick="selectOption(2, 'A')">A) I like to take my time and analyze all the facts</button>
+            <button type="button" onclick="selectOption(2, 'B')">B) I rely on my intuition and gut feeling</button>
+            <button type="button" onclick="selectOption(2, 'C')">C) I prefer making decisions collaboratively</button>
+            <button type="button" onclick="selectOption(2, 'D')">D) I make decisions quickly, even with limited information</button>
+        </div>
+
+        <div class="question">
+            <h3>3. How do you prefer to communicate with others?</h3>
+            <button type="button" onclick="selectOption(3, 'A')">A) By listening carefully and responding thoughtfully</button>
+            <button type="button" onclick="selectOption(3, 'B')">B) Through dynamic and inspiring conversations</button>
+            <button type="button" onclick="selectOption(3, 'C')">C) By focusing on practical and straightforward communication</button>
+            <button type="button" onclick="selectOption(3, 'D')">D) Through clear, logical discussions that solve problems</button>
+        </div>
+
+        <div class="question">
+            <h3>4. In a group setting, what role do you naturally take on?</h3>
+            <button type="button" onclick="selectOption(4, 'A')">A) The organizer who ensures everything is done right</button>
+            <button type="button" onclick="selectOption(4, 'B')">B) The idea generator who brings new concepts</button>
+            <button type="button" onclick="selectOption(4, 'C')">C) The supportive member who keeps harmony in the group</button>
+            <button type="button" onclick="selectOption(4, 'D')">D) The leader who drives the group forward</button>
+        </div>
+
+        <div class="question">
+            <h3>5. When you face a new challenge, how do you usually feel?</h3>
+            <button type="button" onclick="selectOption(5, 'A')">A) Excited and ready to explore new solutions</button>
+            <button type="button" onclick="selectOption(5, 'B')">B) Careful and thoughtful, wanting to avoid mistakes</button>
+            <button type="button" onclick="selectOption(5, 'C')">C) Motivated to learn more and master the challenge</button>
+            <button type="button" onclick="selectOption(5, 'D')">D) Confident and ready to tackle it head-on</button>
+        </div>
+
+        <div class="question">
+            <h3>6. When dealing with a problem, how do you solve it?</h3>
+            <button type="button" onclick="selectOption(6, 'A')">A) Step-by-step and logically</button>
+            <button type="button" onclick="selectOption(6, 'B')">B) By brainstorming new and creative solutions</button>
+            <button type="button" onclick="selectOption(6, 'C')">C) By thinking about how the solution affects others</button>
+            <button type="button" onclick="selectOption(6, 'D')">D) By finding the most efficient and direct solution</button>
+        </div>
+
+        <div class="question">
+            <h3>7. How do you handle change or unpredictability in life?</h3>
+            <button type="button" onclick="selectOption(7, 'A')">A) I prefer stability and structure</button>
+            <button type="button" onclick="selectOption(7, 'B')">B) I adapt quickly and enjoy change</button>
+            <button type="button" onclick="selectOption(7, 'C')">C) I try to keep things balanced and avoid sudden changes</button>
+            <button type="button" onclick="selectOption(7, 'D')">D) I thrive on change and use it to grow</button>
+        </div>
+
+        
+            <div class="question">
+                <h3>8. How do you typically make important life decisions?</h3>
+                <button type="button" onclick="selectOption(8, 'A')">A) Based on logic and practical considerations</button>
+                <button type="button" onclick="selectOption(8, 'B')">B) By following my values and what feels right</button>
+                <button type="button" onclick="selectOption(8, 'C')">C) By considering how it impacts others around me</button>
+                <button type="button" onclick="selectOption(8, 'D')">D) Based on long-term vision and future goals</button>
+            </div>
+
+            <div class="question">
+                <h3>9. What type of work environment do you prefer?</h3>
+                <button type="button" onclick="selectOption(9, 'A')">A) A structured, well-organized environment</button>
+                <button type="button" onclick="selectOption(9, 'B')">B) A flexible and creative space</button>
+                <button type="button" onclick="selectOption(9, 'C')">C) A collaborative and friendly atmosphere</button>
+                <button type="button" onclick="selectOption(9, 'D')">D) A fast-paced and competitive workplace</button>
+            </div>
+
+            <div class="question">
+                <h3>10. When you have to make a decision under pressure, how do you act?</h3>
+                <button type="button" onclick="selectOption(10, 'A')">A) I carefully analyze all available data</button>
+                <button type="button" onclick="selectOption(10, 'B')">B) I rely on my instincts and creativity</button>
+                <button type="button" onclick="selectOption(10, 'C')">C) I seek advice and collaborate with others</button>
+                <button type="button" onclick="selectOption(10, 'D')">D) I make quick, confident decisions</button>
+            </div>
+
+            <div class="question">
+                <h3>11. How do you handle multiple tasks or deadlines?</h3>
+                <button type="button" onclick="selectOption(11, 'A')">A) I organize my tasks and work through them methodically</button>
+                <button type="button" onclick="selectOption(11, 'B')">B) I switch between tasks depending on what feels right at the moment</button>
+                <button type="button" onclick="selectOption(11, 'C')">C) I prioritize based on the most urgent and impactful tasks</button>
+                <button type="button" onclick="selectOption(11, 'D')">D) I enjoy multitasking and thrive under pressure</button>
+            </div>
+
+            <div class="question">
+                <h3>12. What motivates you most in your work or studies?</h3>
+                <button type="button" onclick="selectOption(12, 'A')">A) Achieving specific goals and tasks</button>
+                <button type="button" onclick="selectOption(12, 'B')">B) The opportunity to innovate and create something new</button>
+                <button type="button" onclick="selectOption(12, 'C')">C) Helping others and making a difference</button>
+                <button type="button" onclick="selectOption(12, 'D')">D) Leading and taking charge to create success</button>
+            </div>
+
+            <div class="question">
+                <h3>13. When working on a team project, what’s most important to you?</h3>
+                <button type="button" onclick="selectOption(13, 'A')">A) That everyone is following the plan and getting their work done</button>
+                <button type="button" onclick="selectOption(13, 'B')">B) That we’re coming up with creative and unique solutions</button>
+                <button type="button" onclick="selectOption(13, 'C')">C) That everyone is working well together and no one is left out</button>
+                <button type="button" onclick="selectOption(13, 'D')">D) That we achieve our goals as quickly and efficiently as possible</button>
+            </div>
+
+            <div class="question">
+                <h3>14. When faced with an unexpected obstacle, how do you react?</h3>
+                <button type="button" onclick="selectOption(14, 'A')">A) I analyze the situation and plan my next steps</button>
+                <button type="button" onclick="selectOption(14, 'B')">B) I think creatively and try to come up with alternative solutions</button>
+                <button type="button" onclick="selectOption(14, 'C')">C) I stay calm and work with others to find a solution</button>
+                <button type="button" onclick="selectOption(14, 'D')">D) I tackle it head-on and adjust my strategy quickly</button>
+            </div>
+
+            <div class="question">
+                <h3>15. What type of task excites you the most?</h3>
+                <button type="button" onclick="selectOption(15, 'A')">A) A task that requires careful planning and precision</button>
+                <button type="button" onclick="selectOption(15, 'B')">B) A task that allows me to be creative and think outside the box</button>
+                <button type="button" onclick="selectOption(15, 'C')">C) A task that involves collaboration and teamwork</button>
+                <button type="button" onclick="selectOption(15, 'D')">D) A task that challenges me to perform under pressure</button>
+            </div>
+
+            <button type="button" class="submit" onclick="submitQuiz()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // Array to store selected options
+        const selectedOptions = [];
+
+        // Function to handle option selection
+        function selectOption(questionNumber, option) {
+            // Store or update the selected option for the question
+            selectedOptions[questionNumber - 1] = option;
+            console.log("Selected options so far: ", selectedOptions);
+
+            // Mark the selected button
+            const buttons = document.querySelectorAll(`.question:nth-child(${questionNumber}) button`);
+            buttons.forEach(button => button.classList.remove('selected'));
+            document.querySelector(`.question:nth-child(${questionNumber}) button[onclick="selectOption(${questionNumber}, '${option}')"]`).classList.add('selected');
+        }
+
+        // Function to submit the quiz
+        function submitQuiz() {
+            if (selectedOptions.length < 15) {
+                alert("Please answer all the questions before submitting.");
+            } 
+                
+            
+        }
+    </script>
+</body>
+</html>
